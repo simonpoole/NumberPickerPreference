@@ -1,10 +1,10 @@
-package com.vanniktech.vntnumberpickerpreference.sample;
+package ch.poole.android.numberpickerpreference.sample;
 
 import android.app.Application;
 
 import com.squareup.leakcanary.LeakCanary;
 
-public class VNTNumberPickerPreferenceApplication extends Application {
+public class NumberPickerPreferenceApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();

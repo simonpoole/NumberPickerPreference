@@ -1,4 +1,6 @@
-package com.vanniktech.vntnumberpickerpreference.sample;
+package ch.poole.android.numberpickerpreference.sample;
+
+import com.vanniktech.vntnumberpickerpreference.sample.R;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;

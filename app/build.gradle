@@ -55,6 +55,8 @@ android {
     }
 }
 
+apply from: 'https://raw.githubusercontent.com/simonpoole/gradle-tasks/master/eclipse-android'
+
 dependencies {
     compile project(':library')
 

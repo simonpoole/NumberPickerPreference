@@ -40,3 +40,4 @@ Thumbs.db
 
 # Don't ignore sample.apk
 !sample.apk
+/.settings/

@@ -1,12 +1,15 @@
-package com.vanniktech.vntnumberpickerpreference.sample;
+package ch.poole.android.numberpickerpreference.sample;
+
+import com.vanniktech.vntnumberpickerpreference.sample.R;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceFragment;
+
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceFragmentCompat;
 import android.widget.Toast;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -22,7 +25,7 @@ public class SettingsActivity extends AppCompatActivity {
         this.getFragmentManager().beginTransaction().replace(R.id.content_frame, new SettingsFragment()).commit();
     }
 
-    public static class SettingsFragment extends PreferenceFragment implements Preference.OnPreferenceChangeListener, SharedPreferences.OnSharedPreferenceChangeListener {
+    public static class SettingsFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceChangeListener, SharedPreferences.OnSharedPreferenceChangeListener {
         private Preference preferenceCallback;
         private Preference preferenceCustomSummary;
 
@@ -56,6 +59,12 @@ public class SettingsActivity extends AppCompatActivity {
                 final int value = sharedPreferences.getInt(key, 0);
                 preferenceCustomSummary.setSummary("My custom summary text. Value is " + value);
             }
+        }
+
+        @Override
+        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+            // TODO Auto-generated method stub
+            
         }
     }
 }

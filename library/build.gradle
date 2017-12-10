@@ -1,5 +1,12 @@
-apply plugin: 'com.android.library'
+plugins {
+  id "com.jfrog.bintray" version "1.7.1"
+}
 
+
+apply plugin: 'com.android.library'
+    
+apply from: 'https://raw.githubusercontent.com/simonpoole/gradle-tasks/master/eclipse-android'
+    
 afterEvaluate {
   generateReleaseBuildConfig.enabled = false
 }
@@ -24,7 +31,15 @@ android {
         }
     }
 
-    resourcePrefix 'vnt_'
+    resourcePrefix 'spt_'
 }
 
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
+ext {
+	supportLibVersion = '24.1.1'
+}
+
+dependencies {
+	compile "com.android.support:preference-v7:$supportLibVersion"
+}
+
+apply from: 'https://raw.githubusercontent.com/simonpoole/gradle-tasks/master/publish-on-bintray-android'
