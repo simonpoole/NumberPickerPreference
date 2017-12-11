@@ -33,7 +33,7 @@ public class NumberPickerPreferenceFragment extends PreferenceDialogFragmentComp
         if (increment > 1) {
             final String[]displayedValues = new String[max-min+1];
             for (int i=min;i<=max;i++) {
-                displayedValues[i-1] = Integer.toString(i*increment);
+                displayedValues[i-min] = Integer.toString(i*increment);
             }
             numberPicker.setDisplayedValues(displayedValues);
         }
