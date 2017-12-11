@@ -1,16 +1,17 @@
 package ch.poole.android.numberpickerpreference.sample;
 
-import com.vanniktech.vntnumberpickerpreference.sample.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 import android.widget.Toast;
+
+import ch.poole.android.numberpickerpreference.NumberPickerPreference;
+import ch.poole.android.numberpickerpreference.NumberPickerPreferenceFragment;
 
 public class SettingsActivity extends AppCompatActivity {
     public static Intent start(final Activity activity) {
@@ -22,7 +23,7 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         this.setContentView(R.layout.frame_layout);
-        this.getFragmentManager().beginTransaction().replace(R.id.content_frame, new SettingsFragment()).commit();
+        this.getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, new SettingsFragment()).commit();
     }
 
     public static class SettingsFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceChangeListener, SharedPreferences.OnSharedPreferenceChangeListener {
@@ -65,6 +66,17 @@ public class SettingsActivity extends AppCompatActivity {
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             // TODO Auto-generated method stub
             
+        }
+        
+        @Override
+        public void onDisplayPreferenceDialog(Preference preference) {
+            DialogFragment fragment;
+            if (preference instanceof NumberPickerPreference) {
+                fragment = NumberPickerPreferenceFragment.newInstance(preference.getKey());
+                fragment.setTargetFragment(this, 0);
+                fragment.show(getFragmentManager(),
+                        "android.support.v7.preference.PreferenceFragment.NUMBERPICKER");
+            } else super.onDisplayPreferenceDialog(preference);
         }
     }
 }

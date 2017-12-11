@@ -10,7 +10,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.vanniktech.vntnumberpickerpreference.sample"
+        applicationId "ch.poole.android.numberpickerpreference.sample"
         minSdkVersion rootProject.ext.minSdkVersion as int
         targetSdkVersion rootProject.ext.targetSdkVersion as int
         versionCode rootProject.ext.versionCode as int

@@ -20,9 +20,6 @@ This is an easy to use custom preference, which opens a dialog with a number pic
 
 If spt_increment is larger that one available values are incremented by it, for example spt_minValue="0" and spt_maxValue="100" and spt_increment="10", will display 10, 20, 30 .... spt_currentValueText is the resource id of a text that will display the current value, it is expected to contain one number format parameter example: %1$d MB If spt_currentValueText is not set the selected number will be displayed.
 
-# Download Sample App
-
-No working sample app right now.
 
 # Setup
 
@@ -30,15 +27,10 @@ No working sample app right now.
 
 ```groovy
 
-repositories {
- 	...
-	maven { url 'https://dl.bintray.com/content/simonpoole/android' }
-}
-
 compile 'ch.poole.android:NumberPickerPreference:1.0.0'
 ```
 
-Modules will be available from jcenter as soon as this has stabalized.
+The library is available from jcenter.
 
 Go to your preference XML file and insert the above mentioned XML tags. Afterwards you are good to go and can run your project!
 

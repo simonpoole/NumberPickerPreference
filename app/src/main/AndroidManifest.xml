@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="com.vanniktech.vntnumberpickerpreference.sample"
+    package="ch.poole.android.numberpickerpreference.sample"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:name=".VNTNumberPickerPreferenceApplication"
+        android:name=".NumberPickerPreferenceApplication"
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
@@ -24,6 +24,7 @@
         <activity
             android:name="SettingsActivity"
             android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompatPrefs"
             tools:ignore="UnusedAttribute">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

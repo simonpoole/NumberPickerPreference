@@ -5,6 +5,10 @@
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
     </style>
+    
+    <style name="Theme.AppCompatPrefs" parent="AppBaseTheme">
+		<item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+	</style>
 
     <style name="AppTheme" parent="AppBaseTheme">
     </style>
