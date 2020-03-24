@@ -31,12 +31,6 @@ android {
         }
     }
 
-    applicationVariants.all { variant ->
-        variant.outputs.each { output ->
-            output.outputFile = new File(output.outputFile.parent, output.outputFile.name.replace(".apk", "-" + defaultConfig.versionName + ".apk"))
-        }
-    }
-
     buildTypes {
         release {
             minifyEnabled true
@@ -55,13 +49,13 @@ android {
     }
 }
 
-apply from: 'https://raw.githubusercontent.com/simonpoole/gradle-tasks/master/eclipse-android'
+apply from: 'https://raw.githubusercontent.com/simonpoole/gradle-tasks/master/eclipse-android-3'
 
 dependencies {
-    compile project(':library')
+    implementation project(':library')
 
-    compile rootProject.ext.supportAppCompat
+    implementation rootProject.ext.supportAppCompat
 
-    debugCompile rootProject.ext.leakCanaryDebug
-    releaseCompile rootProject.ext.leakCanaryRelease
+    debugImplementation rootProject.ext.leakCanaryDebug
+    releaseImplementation rootProject.ext.leakCanaryRelease
 }

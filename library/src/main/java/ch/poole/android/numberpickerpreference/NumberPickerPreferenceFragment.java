@@ -1,8 +1,8 @@
 package ch.poole.android.numberpickerpreference;
 
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog.Builder;
-import android.support.v7.preference.PreferenceDialogFragmentCompat;
+import androidx.appcompat.app.AlertDialog.Builder;
+import androidx.preference.PreferenceDialogFragmentCompat;
 import android.view.Gravity;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
