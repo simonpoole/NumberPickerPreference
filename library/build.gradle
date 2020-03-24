@@ -40,7 +40,7 @@ ext {
 }
 
 dependencies {
-	implementation "com.android.support:preference-v7:$supportLibVersion"
+	implementation 'androidx.preference:preference:1.0.0'
 }
 
 apply from: 'https://raw.githubusercontent.com/simonpoole/gradle-tasks/master/publish-on-bintray-android'
