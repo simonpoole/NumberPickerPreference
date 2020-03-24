@@ -5,7 +5,7 @@ plugins {
 
 apply plugin: 'com.android.library'
     
-apply from: 'https://raw.githubusercontent.com/simonpoole/gradle-tasks/master/eclipse-android'
+apply from: 'https://raw.githubusercontent.com/simonpoole/gradle-tasks/master/eclipse-android-3'
     
 afterEvaluate {
   generateReleaseBuildConfig.enabled = false
@@ -36,11 +36,11 @@ android {
 }
 
 ext {
-	supportLibVersion = '24.1.1'
+	supportLibVersion = '28.0.0'
 }
 
 dependencies {
-	compile "com.android.support:preference-v7:$supportLibVersion"
+	implementation "com.android.support:preference-v7:$supportLibVersion"
 }
 
 apply from: 'https://raw.githubusercontent.com/simonpoole/gradle-tasks/master/publish-on-bintray-android'
