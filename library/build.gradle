@@ -36,11 +36,11 @@ android {
 }
 
 ext {
-	supportLibVersion = '28.0.0'
+	androidxVersion = '1.0.0'
 }
 
 dependencies {
-	implementation 'androidx.preference:preference:1.0.0'
+	implementation "androidx.preference:preference:$androidxVersion"
 }
 
 apply from: 'https://raw.githubusercontent.com/simonpoole/gradle-tasks/master/publish-on-bintray-android'
