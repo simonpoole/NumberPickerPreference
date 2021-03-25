@@ -27,10 +27,10 @@ If spt_increment is larger that one available values are incremented by it, for 
 
 ```groovy
 
-compile 'ch.poole.android:NumberPickerPreference:1.0.0'
+compile 'ch.poole.android:NumberPickerPreference:2.0.1'
 ```
 
-The library is available from jcenter.
+The library is available from maven central.
 
 Go to your preference XML file and insert the above mentioned XML tags. Afterwards you are good to go and can run your project!
 
