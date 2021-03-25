@@ -54,7 +54,7 @@ apply from: 'https://raw.githubusercontent.com/simonpoole/gradle-tasks/master/ec
 dependencies {
     implementation project(':library')
 
-    implementation rootProject.ext.supportAppCompat
+    implementation "androidx.preference:preference:1.0.0"
 
     debugImplementation rootProject.ext.leakCanaryDebug
     releaseImplementation rootProject.ext.leakCanaryRelease

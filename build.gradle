@@ -1,6 +1,6 @@
 apply plugin: 'com.github.ben-manes.versions'
-apply plugin: 'com.vanniktech.code.quality.tools'
-apply plugin: 'com.vanniktech.android.junit.jacoco'
+// apply plugin: 'com.vanniktech.code.quality.tools'
+// apply plugin: 'com.vanniktech.android.junit.jacoco'
 
 buildscript {
     repositories {
@@ -12,23 +12,23 @@ buildscript {
     }
     dependencies {
         classpath 'com.vanniktech:gradle-code-quality-tools-plugin:0.4.0'
-        classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.4.0'
+        // classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.4.0'
         classpath 'com.android.tools.build:gradle:3.2.1'
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.13.0'
-        classpath 'net.ltgt.gradle:gradle-errorprone-plugin:0.6.1'
+        // classpath 'net.ltgt.gradle:gradle-errorprone-plugin:0.6.1'
         classpath 'com.github.ksoichiro:gradle-eclipse-aar-plugin:0.3.1'
     }
 }
 
-codeQualityTools {
-    lint {
-        textReport = true
-    }
-}
+// codeQualityTools {
+//    lint {
+//        textReport = true
+//    }
+//}
 
-junitJacoco {
-    ignoreProjects = ['app'] // Don't care about sample
-}
+// junitJacoco {
+//    ignoreProjects = ['app'] // Don't care about sample
+//}
 
 subprojects {
     repositories {
@@ -41,7 +41,7 @@ subprojects {
     group = GROUP
     version = VERSION_NAME
 
-    plugins.apply('net.ltgt.errorprone')
+    // plugins.apply('net.ltgt.errorprone')
 }
 
 ext {
@@ -50,7 +50,6 @@ ext {
     targetSdkVersion = 28
     buildToolsVersion = "28.0.3"
 
-    supportLibraryVersion = '28.0.0'
     leakCanaryVersion = '1.3.1'
 
     versionCode = VERSION_CODE
@@ -62,9 +61,4 @@ ext {
     leakCanaryRelease = "com.squareup.leakcanary:leakcanary-android-no-op:$leakCanaryVersion"
 
     javaVersion = JavaVersion.VERSION_1_8
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.6'
-    distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
 }

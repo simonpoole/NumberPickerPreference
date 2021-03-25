@@ -1,15 +1,11 @@
-plugins {
-  id "com.jfrog.bintray" version "1.8.4"
-}
-
 
 apply plugin: 'com.android.library'
     
 apply from: 'https://raw.githubusercontent.com/simonpoole/gradle-tasks/master/eclipse-android-3'
     
-afterEvaluate {
-  generateReleaseBuildConfig.enabled = false
-}
+//afterEvaluate {
+//  generateReleaseBuildConfig.enabled = false
+//}
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion as int
@@ -33,6 +29,7 @@ android {
     }
 
     resourcePrefix 'spt_'
+   
 }
 
 ext {
@@ -43,4 +40,4 @@ dependencies {
 	implementation "androidx.preference:preference:$androidxVersion"
 }
 
-apply from: 'https://raw.githubusercontent.com/simonpoole/gradle-tasks/master/publish-on-bintray-android'
+apply from: 'https://raw.githubusercontent.com/simonpoole/gradle-tasks/master/publish-on-sonatype-android'
